@@ -8,3 +8,4 @@ def test_movie_model():
     assert movie.title == 'Star Wars'
     assert movie.director == 'George Lucas'
     assert movie.rating == 5
+
