@@ -13,6 +13,7 @@ def index():
 
 @app.get('/movies')
 def list_all_movies():
+    #task 1 Dene Logan
     your_list = movie_repository_singleton.get_all_movies()
     return render_template('list_all_movies.html', list_movies_active=True, your_list = your_list)
 
