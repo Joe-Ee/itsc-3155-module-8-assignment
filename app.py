@@ -31,7 +31,7 @@ def create_movie():
     rating = request.form.get('rating', 0)
 
     # Input verification 
-    if (title==None or director==None or rating<1 or rating>5):
+    if (title==None or director==None or int(rating)<1 or int(rating)>5):
         # Creates a new form 
         return redirect('/movies/new')
     else:
