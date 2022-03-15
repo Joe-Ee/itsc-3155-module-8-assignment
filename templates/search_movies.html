@@ -6,4 +6,40 @@
 <h1 class="mb-5">Search Movie Ratings</h1>
 <p class="mb-3">Search for a movie rating below</p>
 <!-- TODO: Feature 3 -->
+
+<form action="/movies/search" method="get">
+    <div class="search-bar">
+      <label for="searchMov">Movie that you want to search for</label>
+      <input type="text" class="form-control" id="searchMov" name = "searchMov" placeholder="Movie Name">
+      
+    </div>
+    <input type="submit" value = "Submit" class="btn btn-primary">
+  </form>
+  
+
+{% if movie.title == "-1"  %}
+<p>Type in a movie title to get its rating<p>
+  {% elif movie != None %}
+<table class="table table-borderless">
+
+  <thead ><table class="table">
+    <thead>
+      <tr>
+        <th scope="row">Movie Name</th>
+        <th scope="row">Movie Rating</th>
+      </tr></thead>
+  <tbody style= "border-top:3px solid black;">
+<tr>
+  
+  <td >{{movie.title}}</td>
+
+  <td>{{movie.rating}}</td>
+  </tr> 
+</tbody>
+</table>
+{% else %}
+<p>That movie is not in our database, please try another one</p>
+{%endif%}
+
+
 {% endblock %}
